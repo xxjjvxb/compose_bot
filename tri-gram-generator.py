@@ -14,9 +14,10 @@ import cPickle as pkl
 
 if __name__ == "__main__":
 	
+	print("reading data...")
 	count = pkl.load(open("tri-gram-count.dat","rb"))
-		
-	length = 500;
+			
+	length = 50; # length of music
 	time = 1;
 	
 	generated = numpy.zeros((length, 88))
@@ -27,11 +28,11 @@ if __name__ == "__main__":
 			generated[time][x] = 1
 	## '''
 			
-	# print generated
-	print max(max(max(max(max(count)))))
+	# print max(max(max(max(max(count)))))
 	
 	while True:
 		time = time + 1
+		print(time,length)
 		
 		if time == length:
 			break
@@ -54,14 +55,13 @@ if __name__ == "__main__":
 			
 			# print ratio
 			
-			if (ratio/3) > rd.random():
-				generated[time][note] = 1
+			if (ratio/4) > rd.random(): #  using orgin ratio directly brings too many notes
+				generated[time][note] = 1 # 
 	
-		print sum(generated[time])
+		# print sum(generated[time]) #print number of pressed note
 		
 	
-	midiwrite("output-tri.mid", generated)
-	
+	midiwrite("output-tri.mid", generated) # fileout
 	
 	
 	

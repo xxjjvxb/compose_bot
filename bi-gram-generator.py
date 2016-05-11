@@ -14,19 +14,12 @@ import cPickle as pkl
 
 if __name__ == "__main__":
 	
-	count = pkl.load(open("bi-gram-count.dat","rb"))
+	count = pkl.load(open("bi-gram-count.dat","rb")) #load data from file
 		
 	length = 200;
 	time = 0;
 	
-	generated = numpy.zeros((length, 88))
-	
-	'''## random initial
-	for x in range(88):
-		if (rd.random() > 0.90) :
-			generated[time][x] = 1
-	## '''
-			
+	generated = numpy.zeros((length, 88)) 
 	
 	while True:
 		time = time + 1
@@ -48,7 +41,7 @@ if __name__ == "__main__":
 			ratio = sumOfOne / sumOfZero
 			
 			
-			if (ratio/3) > rd.random():
+			if (ratio/5) > rd.random(): # using orgin ratio directly brings too many notes
 				generated[time][note] = 1
 	
 		#print sum(generated[time])
