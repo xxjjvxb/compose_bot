@@ -1,1 +1,17 @@
-두번째 업데이트 테스트
+두가지 프로그램이 있음
+
+bi-gram
+ bi-gram-counter.py
+ bi-gram-generator.py
+ bi-gram-count.dat
+
+tri-gram
+ tri-gram-counter.py
+ tri-gram-generator.py
+ tri-gram-count.dat
+
+
+dat 파일에는 count 한 정보를 보관하고 있습니다.
+generator를 실행하면 각각 output-bi, output-tri 의 이름으로 미디가 작성됩니다.
+
+방식은 풀카운트를 통해 노트가 눌리는 확률을 살피고 그에 비례하는 랜덤확률을 사용하여 작곡을 진행함.
